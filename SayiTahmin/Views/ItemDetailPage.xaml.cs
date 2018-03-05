@@ -1,0 +1,30 @@
+﻿using System;
+
+using Xamarin.Forms;
+
+namespace SayiTahmin
+{
+    public partial class ItemDetailPage : ContentPage
+    {
+        ItemDetailViewModel viewModel;
+
+        // Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
+        public ItemDetailPage()
+        {
+            InitializeComponent();
+
+            var item = Guess.Number(true);
+            item.arti = 2;
+            item.eksi = 1;
+            viewModel = new ItemDetailViewModel(item);
+            BindingContext = viewModel;
+        }
+
+        public ItemDetailPage(ItemDetailViewModel viewModel)
+        {
+            InitializeComponent();
+
+            BindingContext = this.viewModel = viewModel;
+        }
+    }
+}

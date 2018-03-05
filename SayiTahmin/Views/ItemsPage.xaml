@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SayiTahmin.ItemsPage" Title="{Binding Title}" x:Name="BrowseItemsPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="New Game" Clicked="NewGame_Clicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<StackLayout>
+			<ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="10" Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding number}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                                    <CustomEntry Text="{Binding valueString}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" />
+                                </StackLayout>
+                             </StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

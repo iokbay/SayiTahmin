@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{6C09D4C5-353D-4AB3-94D2-DBC7578F717B}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SayiTahmin</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ItemDetailPage.xaml.cs">
+      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml.cs">
+      <DependentUpon>NewItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Guess.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Estimate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MyExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ItemDetailPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ItemsPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)CustomControls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+  </ItemGroup>
+</Project>
